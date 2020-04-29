@@ -7,7 +7,13 @@ import {NavigationContainer} from '@react-navigation/native';
 const App = () => {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      <NavigationContainer
+        theme={{
+          colors: {
+            background: 'rgb(245,246,245)',
+            border: 'transparent',
+          },
+        }}>
         <MainApp />
       </NavigationContainer>
     </Provider>
