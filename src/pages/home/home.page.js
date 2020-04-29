@@ -8,6 +8,7 @@ import ProfilePage from '../profile/profile.page';
 import LocationPage from '../location/location.page';
 import ChatPage from '../chat/chat.page';
 import SettingsPage from '../setting/setting.page';
+import Header from '../../components/header/header.component';
 
 const Tabs = createBottomTabNavigator();
 
@@ -43,33 +44,29 @@ export default () => {
   return (
     <Tabs.Navigator
       screenOptions={({route}) => ({
-        tabBarIcon: ({color, size}) => {
+        tabBarIcon: ({color}) => {
           return (
             <Icon
               name={Routes[route.name.trim()].icon}
               color={color}
-              size={size}
+              size={18}
             />
           );
         },
-        title: () => {},
+        title: () => <Header />,
       })}
       tabBarOptions={{
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
+        showIcon: true,
         style: {
           backgroundColor: 'white',
           elevation: 10,
           borderRadius: 20,
-          marginLeft: 5,
-          marginRight: 5,
+          marginLeft: 10,
+          marginRight: 10,
           marginBottom: 10,
           marginTop: 10,
-        },
-        tabStyle: {
-          // elevation: 10,
-          borderRadius: 20,
-          // backgroundColor: 'transparent',
         },
       }}>
       <Tabs.Screen
