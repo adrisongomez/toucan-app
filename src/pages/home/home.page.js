@@ -53,7 +53,7 @@ export default () => {
             />
           );
         },
-        title: () => <Header />,
+        title: () => {},
       })}
       tabBarOptions={{
         activeTintColor: 'tomato',
